@@ -1,0 +1,19 @@
+{
+  "name": "get-version-action",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/battila7/get-version-action.git"
+  },
+  "author": "Attila Bagossy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/battila7/get-version-action/issues"
+  },
+  "homepage": "https://github.com/battila7/get-version-action#readme"
+}
