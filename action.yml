@@ -1,0 +1,8 @@
+name: 'Get Version'
+description: 'Extracts the version from github.ref.'
+outputs:
+  version:
+    description: 'The pushed tag version, for example "v1.2.7"'
+runs:
+  using: 'node12'
+  main: 'index.js'
