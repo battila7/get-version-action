@@ -15,7 +15,7 @@ The pushed version. If `github.ref` was `/refs/tags/v1.2.7` then the value of th
 ~~~~YML
 steps:
     - id: get_version
-      uses: battila7/get-version-action@v1.1.0
+      uses: battila7/get-version-action@v1.2.0
 
     - run: echo ${{ steps.get_version.outputs.version }}
 ~~~~
