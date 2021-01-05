@@ -2,9 +2,9 @@ name: 'Get Version'
 description: 'Extracts the version from github.ref.'
 outputs:
   version:
-    description: 'The pushed tag version, for example "v1.2.7"'
+    description: 'The pushed version, for example "v1.2.7"'
   version-without-v:
-    description: 'The pushed tag version, without the v prefix, for example "1.2.7"'
+    description: 'The pushed version, without the v prefix, for example "1.2.7"'
 runs:
   using: 'node12'
   main: 'dist/index.js'
