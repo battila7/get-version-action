@@ -2,7 +2,8 @@ const core = require('@actions/core')
 const github = require('@actions/github')
 
 try {
-  const version = github.context.ref.replace('refs/tags/', '')
+  const pattern = /refs\/tags\/|refs\/heads\/release\//;
+  const version = github.context.ref.replace(pattern, '')
 
   let versionWithoutV = version
   if (version.startsWith('v')) {

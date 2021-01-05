@@ -8,7 +8,7 @@ Finally, you can reliably get the pushed version on every platform.
 
 ### `version`
 
-The pushed version. If `github.ref` was `/refs/tags/v1.2.7` then the value of this output will be `v1.2.7`.
+The pushed version. If `github.ref` was `refs/tags/v1.2.7` or `refs/heads/release/v1.2.7` then the value of this output will be `v1.2.7`.
 
 ### `version-without-v`
 
