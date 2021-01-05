@@ -4,6 +4,8 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
+    "lint": "standard src/**/*.js test/**/*.js",
+    "lint:fix": "standard --fix src/**/*.js test/**/*.js",
     "package": "ncc build src/index.js -o dist",
     "test": "jest --coverage",
     "test:watch": "jest --watch"
@@ -24,6 +26,7 @@
   },
   "devDependencies": {
     "@vercel/ncc": "0.26.1",
-    "jest": "26.6.3"
+    "jest": "26.6.3",
+    "standard": "16.0.3"
   }
 }
