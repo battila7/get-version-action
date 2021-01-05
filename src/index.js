@@ -8,9 +8,6 @@ try {
 
   if (version) {
     core.setOutput('version', version)
-  }
-
-  if (versionWithoutV) {
     core.setOutput('version-without-v', versionWithoutV)
   }
 } catch (error) {

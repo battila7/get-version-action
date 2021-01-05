@@ -24,7 +24,7 @@ describe('extractVersionFromRef', () => {
 
     // Then
     expect(version).toBe(ref)
-    expect(versionWithoutV).toBeUndefined()
+    expect(versionWithoutV).toBe(ref)
   })
 
   test('should return the ref itself and it\'s v-stripped version, if the ref is a single segment', () => {
@@ -48,7 +48,7 @@ describe('extractVersionFromRef', () => {
 
     // Then
     expect(version).toBe('1.2.3')
-    expect(versionWithoutV).toBeUndefined()
+    expect(versionWithoutV).toBe('1.2.3')
   })
 
   test('should strip leading segments and remove the v-prefix', () => {

@@ -10,7 +10,7 @@ function extractVersionFromRef (ref) {
   const version = segments.pop()
   const versionWithoutV = version.startsWith('v')
     ? version.substring(1)
-    : undefined
+    : version
 
   return {
     version,
@@ -19,6 +19,5 @@ function extractVersionFromRef (ref) {
 }
 
 module.exports = {
-  extractVersionFromRef,
-  REF_SEPARATOR
+  extractVersionFromRef
 }
