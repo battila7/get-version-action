@@ -5774,29 +5774,26 @@ function wrappy (fn, cb) {
 
 const REF_SEPARATOR = '/'
 
-function extractVersionFromRef(ref) {
-    if (!ref) {
-        return {}
-    }
+function extractVersionFromRef (ref) {
+  if (!ref) {
+    return {}
+  }
 
-    const segments = ref.split(REF_SEPARATOR)
-    if (segments.length == 0) {
-        return {}
-    }
+  const segments = ref.split(REF_SEPARATOR)
 
-    const version = segments.pop()
-    const versionWithoutV = version.startsWith('v')
-        ? version.substring(1)
-        : undefined
+  const version = segments.pop()
+  const versionWithoutV = version.startsWith('v')
+    ? version.substring(1)
+    : version
 
-    return {
-        version,
-        versionWithoutV
-    }
+  return {
+    version,
+    versionWithoutV
+  }
 }
 
 module.exports = {
-    extractVersionFromRef
+  extractVersionFromRef
 }
 
 
@@ -5815,13 +5812,10 @@ try {
 
   if (version) {
     core.setOutput('version', version)
-  }
-
-  if (versionWithoutV) {
     core.setOutput('version-without-v', versionWithoutV)
   }
 } catch (error) {
-  core.setFailed(error.message);
+  core.setFailed(error.message)
 }
 
 
