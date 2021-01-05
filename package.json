@@ -5,7 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "package": "ncc build src/index.js -o dist",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --coverage",
+    "test:watch": "jest --watch"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,7 @@
     "@actions/github": "4.0.0"
   },
   "devDependencies": {
-    "@vercel/ncc": "0.26.1"
+    "@vercel/ncc": "0.26.1",
+    "jest": "26.6.3"
   }
 }
