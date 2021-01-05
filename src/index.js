@@ -14,5 +14,5 @@ try {
     core.setOutput('version-without-v', versionWithoutV)
   }
 } catch (error) {
-  core.setFailed(error.message);
+  core.setFailed(error.message)
 }
