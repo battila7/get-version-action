@@ -8,15 +8,15 @@ outputs:
   is-semver:
     description: 'Set to true if the pushed version is a valid semver value. Undefined otherwise.'
   major:
-    description: 'The semver major version, for example "1" in the case of "v1.2.3-ALPHA.0-BUILD.1"'
+    description: 'The semver major version, for example "1" in the case of "v1.2.3-ALPHA.0+BUILD.1"'
   minor:
-    description: 'The semver minor version, for example "2" in the case of "v1.2.3-ALPHA.0-BUILD.1"'
+    description: 'The semver minor version, for example "2" in the case of "v1.2.3-ALPHA.0+BUILD.1"'
   patch:
-    description: 'The semver patch version, for example "3" in the case of "v1.2.3-ALPHA.0-BUILD.1"'
+    description: 'The semver patch version, for example "3" in the case of "v1.2.3-ALPHA.0+BUILD.1"'
   prerelease:
-    description: 'The semver prerelease version, for example "ALPHA.0" in the case of "v1.2.3-ALPHA.0-BUILD.1"'
+    description: 'The semver prerelease version, for example "ALPHA.0" in the case of "v1.2.3-ALPHA.0+BUILD.1"'
   build:
-    description: 'The semver build version, for example "BUILD.1" in the case of "v1.2.3-ALPHA.0-BUILD.1"'
+    description: 'The semver build version, for example "BUILD.1" in the case of "v1.2.3-ALPHA.0+BUILD.1"'
 runs:
   using: 'node12'
   main: 'dist/index.js'
