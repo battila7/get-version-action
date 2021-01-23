@@ -13,16 +13,24 @@ const OUTPUTS = {
   build: 'build'
 }
 
-try {
-  const result = extractVersionFromRef(github.context.ref)
+if (require.main === module) {
+  main()
+}
 
-  Object.keys(result).forEach(key => {
-    core.setOutput(OUTPUTS[key], result[key])
-  })
+module.exports = main
 
-  if (Object.prototype.hasOwnProperty.call(result, 'major')) {
-    core.setOutput('is-semver', 'true')
+function main () {
+  try {
+    const result = extractVersionFromRef(github.context.ref)
+
+    Object.keys(result).forEach(key => {
+      core.setOutput(OUTPUTS[key], result[key])
+    })
+
+    if (Object.prototype.hasOwnProperty.call(result, 'major')) {
+      core.setOutput('is-semver', 'true')
+    }
+  } catch (error) {
+    core.setFailed(error.message)
   }
-} catch (error) {
-  core.setFailed(error.message)
 }
