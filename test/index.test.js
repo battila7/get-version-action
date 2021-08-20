@@ -66,5 +66,6 @@ describe('get-version', () => {
     expect(State.output.prerelease).toBe('ALPHA.0')
     expect(State.output.build).toBe('456.7')
     expect(State.output['is-semver']).toBe('true')
+    expect(State.output['is-prerelease']).toBe(true)
   })
 })

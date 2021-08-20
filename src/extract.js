@@ -33,11 +33,13 @@ function parseSemver (version) {
   const result = {
     major: sv.major.toString(),
     minor: sv.minor.toString(),
-    patch: sv.patch.toString()
+    patch: sv.patch.toString(),
+    isPrerelease: false
   }
 
   if (sv.prerelease.length > 0) {
     result.prerelease = sv.prerelease.join(PRERELEASE_SEPARATOR)
+    result.isPrerelease = true
   }
 
   if (sv.build.length > 0) {
