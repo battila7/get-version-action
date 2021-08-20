@@ -17,6 +17,9 @@ outputs:
     description: 'The semver prerelease version, for example "ALPHA.0" in the case of "v1.2.3-ALPHA.0+BUILD.1"'
   build:
     description: 'The semver build version, for example "BUILD.1" in the case of "v1.2.3-ALPHA.0+BUILD.1"'
+  is-prerelease:
+          description: 'Set to true if the pushed version is a prerelease. otherwise false.'
+  
 runs:
   using: 'node12'
   main: 'dist/index.js'

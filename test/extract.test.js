@@ -97,7 +97,7 @@ describe('extractVersionFromRef', () => {
       const ref = 'a/b/v1.2.3'
 
       // When
-      const { major, minor, patch, prerelease, build } = extractVersionFromRef(ref)
+      const { major, minor, patch, prerelease, build, isPrerelease } = extractVersionFromRef(ref)
 
       // Then
       expect(major).toBe('1')
@@ -105,6 +105,7 @@ describe('extractVersionFromRef', () => {
       expect(patch).toBe('3')
       expect(prerelease).toBeUndefined()
       expect(build).toBeUndefined()
+      expect(isPrerelease).toBe(false)
     })
 
     test('should return prerelease semver part if the ref ends in valid semver and contains prerelease', () => {
@@ -150,6 +151,21 @@ describe('extractVersionFromRef', () => {
       expect(patch).toBe('3')
       expect(prerelease).toBe('ALPHA.0')
       expect(build).toBe('456.1')
+    })
+
+    test('should return is_prerelease as true if the ref ends in valid semver and contains prerelease', () => {
+      // Given
+      const ref = 'a/b/v1.2.3-ALPHA.0+456.1'
+
+      // When
+      const { major, minor, patch, prerelease, isPrerelease } = extractVersionFromRef(ref)
+
+      // Then
+      expect(major).toBe('1')
+      expect(minor).toBe('2')
+      expect(patch).toBe('3')
+      expect(prerelease).toBe('ALPHA.0')
+      expect(isPrerelease).toBe(true)
     })
   })
 })
