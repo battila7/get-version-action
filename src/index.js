@@ -10,7 +10,8 @@ const OUTPUTS = {
   minor: 'minor',
   patch: 'patch',
   prerelease: 'prerelease',
-  build: 'build'
+  build: 'build',
+  isPrerelease: 'is-prerelease'
 }
 
 if (require.main === module) {
